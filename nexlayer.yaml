@@ -1,0 +1,14 @@
+application:
+  name: dagster
+  pods:
+  - name: app
+    image: dagster/dagster-celery-k8s:1.0.0
+    path: /
+    servicePorts:
+    - 3000
+    vars:
+      DAGSTER_HOME: /opt/dagster/dagster_home
+    volumes:
+    - name: dagster-home
+      mountPath: /opt/dagster/dagster_home
+      size: 5Gi
