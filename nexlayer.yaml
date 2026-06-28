@@ -2,7 +2,7 @@ application:
   name: dagster
   pods:
   - name: app
-    image: dagster/dagster-k8s:1.11.14
+    image: mirror.gcr.io/dagster/dagster-k8s:1.11.14
     path: /
     command: sh -c "mkdir -p $DAGSTER_HOME && exec dagster-webserver --empty-workspace -h 0.0.0.0 -p 3000"
     servicePorts:
